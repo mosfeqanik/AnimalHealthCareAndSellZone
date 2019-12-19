@@ -17,11 +17,11 @@ class Database{
         $profession,
         $contractnumber,
         $location,
-        $about,
         $password)
     {
-        $password=md5($password);
-        $registration_query="INSERT INTO users (usertype,
+        try{
+            $password=md5($password);
+            $registration_query="INSERT INTO users (usertype,
                                                 username,
                                                 email,
                                                 name,
@@ -29,8 +29,7 @@ class Database{
                                                 password,
                                                 profession,
                                                 contractnumber,
-                                                location,
-                                                about)
+                                                location)
             VALUES (:usertype,
                     :username,
                     :email,
@@ -39,25 +38,43 @@ class Database{
                     :password,
                     :profession,
                     :contractnumber,
-                    :location,
-                    :about)";
-        $statement=$this->conn->prepare($registration_query);
-        $statement->execute
-    (
-        array
-        (
-            ":usertype"         =>  $usertype,
-            ":username"         =>  $username,
-            ":email"            =>  $email,
-            ":name"             =>  $name,
-            ":gender"           =>  $gender,
-            ":password"         =>  $password,
-            ":profession"       =>  $profession,
-            ":contractnumber"   =>  $contractnumber,
-            ":location"         =>  $location,
-            ":about"            =>  $about,     
-        )
-    );
+                    :location)";
+            $statement=$this->conn->prepare($registration_query);
+            $statement->execute
+            (
+                array
+                (
+                    ":usertype"         =>  $usertype,
+                    ":username"         =>  $username,
+                    ":email"            =>  $email,
+                    ":name"             =>  $name,
+                    ":gender"           =>  $gender,
+                    ":password"         =>  $password,
+                    ":profession"       =>  $profession,
+                    ":contractnumber"   =>  $contractnumber,
+                    ":location"         =>  $location
+                )
+            );
+            if ($statement) {
+                session_start();
+                $_SESSION['message'] = "Successfully Added";
+                echo $_SESSION['message'];
+
+                header('location:../index.php');
+            } else {
+                $_SESSION['message'] = "Couldn't store , try again";
+                echo $_SESSION['message'];
+                header('location:../index.php');
+            }
+        }catch (PDOException $e) {
+            $msg = $e->getMessage();
+            if(isset($meg)){
+
+                $_SESSION['message'] = $msg;
+                $_SESSION['message'];
+                header('location:../index.php');
+            }
+        }
     }
 
 

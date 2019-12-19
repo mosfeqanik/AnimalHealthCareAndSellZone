@@ -8,7 +8,7 @@
 							
 						</li>
 						<li>
-							<p><span class="glyphicon glyphicon-earphone"></span> +88 01681 186911  </p>
+							<p><span class="glyphicon glyphicon-earphone"></span> +88 0173 478770  </p>
 						</li>
 						<li><a class="sign" href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>
 						</li>
@@ -50,9 +50,9 @@
 							</ul>
 						</div>
 						<div class="w3ls-bnr-icons social-icon navbar-right">
-							<a href="https://twitter.com/InfoanimalInfo" class="social-button twitter"><i class="fa fa-twitter"></i></a>
-							<a href="https://www.facebook.com/Animal-Information-zone-121638088549277/" class="social-button facebook"><i class="fa fa-facebook"></i></a>
-							<a href="https://plus.google.com/u/0/" class="social-button google"><i class="fa fa-google-plus"></i></a>
+							<a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a>
+							<a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a>
+							<a href="#" class="social-button google"><i class="fa fa-google-plus"></i></a>
 							
 						</div>
 						<div class="clearfix"> </div>

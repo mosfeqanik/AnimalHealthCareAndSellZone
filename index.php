@@ -53,7 +53,11 @@
 					</ul>
 				</div>
 			</div>
-			
+            <?php
+            if(isset($_SESSION['message'])){
+                echo $_SESSION['message'];
+            }
+            ?>
 			<div class="banner-w3text w3layouts">
 				<h3 class="w3ls_agile">New Helping Hand</h3>
 				<h2>Animal Care Zone</h2>
@@ -75,7 +79,7 @@
 						<div class="w3menu navbar-left">
 							<ul class="nav navbar">
 								<li><a href="index.php" class="active">Home</a></li>
-								<li><a href="Catagories.php">Medicare</a></li>
+								<li><a href="Medicare.php">Medicare</a></li>
 								<li><a href="Catagories.php">Catagories</a></li>
 								<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Products</span><span class="caret"></span></a>
 									<ul class="dropdown-menu">
@@ -89,9 +93,9 @@
 							</ul>
 						</div>
 						<div class="w3ls-bnr-icons social-icon navbar-right">
-							<a href="https://twitter.com/InfoanimalInfo"><i class="fa fa-twitter"></i></a>
-							<a href="https://www.facebook.com/Animal-Information-zone-121638088549277/" class="social-button facebook"><i class="fa fa-facebook"></i></a>
-							<a href="https://plus.google.com/u/0/" class="social-button google"><i class="fa fa-google-plus"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a>
+							<a href="#" class="social-button google"><i class="fa fa-google-plus"></i></a>
 							
 						</div>
 						<div class="clearfix"> </div>
@@ -384,21 +388,9 @@
 	
 	<!-- //subscribe -->
 	<!-- copy rights start here -->
-	<div class="copy-w3right">
-		<div class="container">
-			<div class="top-nav bottom-w3lnav">
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="medicare.php">Medicare</a></li>
-					<li><a href="catagories.php">Catagories</a></li>
-					<li><a href="foods.php">Foods</a></li>
-					<li><a href="accessories.php">Accessories</a></li>
-					<li><a href="about.php">About</a></li>
-				</ul>
-			</div>
-			<p>© 2019 Animal Care Zone : All Rights Reserved</p>
-		</div>
-	</div>
+	<?php
+    include 'footer.php';
+    ?>
 	<!-- text-effect -->
 	<script type="text/javascript" src="js/jquery.transit.js"></script>
 	<script type="text/javascript" src="js/jquery.textFx.js"></script>

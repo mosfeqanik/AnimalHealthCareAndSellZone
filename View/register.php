@@ -31,6 +31,7 @@ $register = new Database();
                 $location   =   $_POST["location"];
                 $password;
                 $register->register($username,$usertype,$email,$name,$gender,$profession,$contractnumber,$location,$password);
+
         }
 
         } else {

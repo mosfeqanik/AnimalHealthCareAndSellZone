@@ -25,8 +25,8 @@ try {
         header('location:../medicare.php');
     }
     else{
-        $meg= "Check User ID and Password";
-        $_SESSION['message']=$meg;
+        $msg= "Check User ID and Password";
+        $_SESSION['message']=$msg;
       header('location:../index.php');
     }
 
