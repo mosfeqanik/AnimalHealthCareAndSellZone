@@ -10,7 +10,7 @@
 						<li>
 							<p><span class="glyphicon glyphicon-earphone"></span> +88 0173 478770  </p>
 						</li>
-						<li><a class="sign" href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>
+						<li><a class="sign" href="#" data-toggle="modal" data-target="#myModal3"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>
 						</li>
 					</ul>
 				</div>
@@ -63,49 +63,7 @@
 		</div>
 	</div>
 	<!-- //banner -->
-	<!-- Modal1 -->
-	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
 
-					<div class="signin-form profile">
-						<h3 class="agileinfo_sign">Sign In</h3>
-						<div class="login-form">
-							<form action="#" method="post">
-								<div id="div_id_email" class="form-group required">
-		                            	<label for="id_email" class="control-label col-md-4  requiredField"> E-mail<span class="asteriskField">*</span> </label>
-			                            <div class="controls col-md-8 ">
-			                                <input class="input-md emailinput form-control" id="id_email" name="email" placeholder="Your current email address" style="margin-bottom: 10px" type="email" required="" />
-			                            </div>     
-	                        		</div>
-								<div id="div_id_password1" class="form-group required">
-			                            <label for="id_password1" class="control-label col-md-4  requiredField">Password<span class="asteriskField">*</span> </label>
-			                            <div class="controls col-md-8 "> 
-			                                <input class="input-md textinput textInput form-control" id="id_password1" name="password1" placeholder="Give Your password" style="margin-bottom: 10px" type="password" required="" />
-			                            </div>
-			                        </div> 
-								<div class="tp">
-									<input type="submit" value="Sign In">
-								</div>
-							</form>
-						</div>
-						<div class="login-social-grids">
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss"></i></a></li>
-							</ul>
-						</div>
-						<p><a href="#" data-toggle="modal" data-target="#myModal3"> Don't have an account?</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //Modal1 -->
 	<!-- Modal2 -->
 	<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
 		<div class="modal-dialog">
@@ -155,6 +113,14 @@
 		                                <input class="input-md textinput textInput form-control" id="id_password" name="password1" placeholder="Create a password" style="margin-bottom: 10px" type="password" />
 		                            </div>
 		                        </div>
+                                <div id="div_id_password" class="form-group required">
+                                    <label for="id_password" class="control-label col-md-4  requiredField">Confirm Password
+                                        <span class="asteriskField">*</span>
+                                    </label>
+                                    <div class="controls col-md-8 ">
+                                        <input class="input-md textinput textInput form-control" id="id_password" name="c" placeholder="Create a password" style="margin-bottom: 10px" type="password" />
+                                    </div>
+                                </div>
 		                        <div id="div_id_name" class="form-group required"> 
 		                        	<label for="id_name" class="control-label col-md-4  requiredField"> Full name
 		                        		<span class="asteriskField">*</span> 
@@ -186,7 +152,7 @@
 		                             	<span class="asteriskField">*</span> 
 		                             </label>
 		                             <div class="controls col-md-8 ">
-		                                 <input class="input-md textinput textInput form-control" id="id_number" name="number" placeholder="provide your number" style="margin-bottom: 10px" type="text" />
+		                                 <input type="number" class="input-md textinput textInput form-control" id="id_number" name="number" placeholder="provide your number" style="margin-bottom: 10px" type="text" />
 		                            </div> 
 		                        </div>
 		                        <div id="div_id_location" class="form-group required">

@@ -49,15 +49,10 @@
 						<li>
 							<p><span class="glyphicon glyphicon-earphone"></span> +88 0173 478770 </p>
 						</li>
-						<li><a class="sign" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>							</li>
+						<li><a class="sign" data-toggle="modal" data-target="#myModal3"><i class="fa fa-sign-in" aria-hidden="true"></i> Create an account</a>							</li>
 					</ul>
 				</div>
 			</div>
-            <?php
-            if(isset($_SESSION['message'])){
-                echo $_SESSION['message'];
-            }
-            ?>
 			<div class="banner-w3text w3layouts">
 				<h3 class="w3ls_agile">New Helping Hand</h3>
 				<h2>Animal Care Zone</h2>
@@ -118,19 +113,19 @@
 						<h3 class="agileinfo_sign">Sign In</h3>
 
 						<div class="login-form">
-							<form action="login.php" method="post">
+							<form action="#" method="post">
 								<div id="div_id_email" class="form-group required">
 		                            	<label for="id_email" class="control-label col-md-4  requiredField"> E-mail<span class="asteriskField">*</span> </label>
 			                            <div class="controls col-md-8 ">
-			                                <input class="input-md emailinput form-control" id="id_email" name="email" placeholder="Your current email address" style="margin-bottom: 10px" type="email" required="" />
-			                            </div>     
+			                                <input class="input-md emailinput form-control" id="id_esmail" name="email" placeholder="Your current email address" style="margin-bottom: 10px" type="email" required="" />
+			                            </div>
 	                        		</div>
 								<div id="div_id_password1" class="form-group required">
 			                            <label for="id_password1" class="control-label col-md-4  requiredField">Password<span class="asteriskField">*</span> </label>
-			                            <div class="controls col-md-8 "> 
+			                            <div class="controls col-md-8 ">
 			                                <input class="input-md textinput textInput form-control" id="id_password1" name="password1" placeholder="Give Your password" style="margin-bottom: 10px" type="password" required="" />
 			                            </div>
-			                        </div> 
+			                        </div>
 								<div class="tp">
 									<input type="submit" value="SignIn" name="submit">
 								</div>
@@ -143,7 +138,7 @@
 								<li><a href="#"><i class="fa fa-rss"></i></a></li>
 							</ul>
 						</div>
-						<p><a data-toggle="modal" data-target="#myModal3"> Don't have an account?</a></p>
+						<button data-toggle="modal" data-target="#myModal3"> Don't have an account?</button>
 					</div>
 				</div>
 			</div>
@@ -159,25 +154,25 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 
 					<div class="signin-form profile">
-<!--   sign up-->	<h3 class="agileinfo_sign">Sign Up</h3>
+<!--   sign up-->	<h3 class="agileinfo_sign">Create An Account</h3>
 						<div class="login-form">
 							<form action="View/register.php" method="post">
 								<div id="div_id_select" class="form-group required">
 									<label for="id_select"  class="control-label col-md-4  requiredField"> Select As
-										<span class="asteriskField">*</span> 
+										<span class="asteriskField">*</span>
 									</label>
 									<div class="controls col-md-8 "  style="margin-bottom: 10px">
 										<label class="radio-inline">
 		                                	<input type="radio" checked="checked" name="usertype" id="id_select_1" value="Vet"  style="margin-bottom: 10px">VET
 		                                </label>
-		                                <label class="radio-inline"> 
+		                                <label class="radio-inline">
 		                                	<input type="radio" name="usertype" id="id_select_2" value="Owner"  style="margin-bottom: 10px">OWNER
 		                                </label>
-									</div>	
+									</div>
 								</div>
 		                        <div id="div_id_username" class="form-group required">
 		                        	<label for="id_username" class="control-label col-md-4  requiredField"> Username
-		                            	<span class="asteriskField">*</span> 
+		                            	<span class="asteriskField">*</span>
 		                            </label>
 		                            <div class="controls col-md-8 ">
 		                            	<input class="input-md  textinput textInput form-control" id="id_username" maxlength="30" name="username" placeholder="Choose your username" style="margin-bottom: 10px" type="text" />
@@ -185,7 +180,7 @@
 		                        </div>
 		                        <div id="div_id_email" class="form-group required">
 		                        	<label for="id_email" class="control-label col-md-4  requiredField"> E-mail
-		                            	<span class="asteriskField">*</span> 
+		                            	<span class="asteriskField">*</span>
 		                            </label>
 		                            <div class="controls col-md-8 ">
 		                                <input class="input-md emailinput form-control" id="id_email" name="email" placeholder="Your current email address" style="margin-bottom: 10px" type="email" />
@@ -193,65 +188,65 @@
 		                        </div>
 		                        <div id="div_id_password" class="form-group required">
 		                        	<label for="id_password" class="control-label col-md-4  requiredField">Password
-		                        		<span class="asteriskField">*</span> 
+		                        		<span class="asteriskField">*</span>
 		                        	</label>
-		                            <div class="controls col-md-8 "> 
+		                            <div class="controls col-md-8 ">
 		                                <input class="input-md textinput textInput form-control" id="id_password" name="p" placeholder="Create a password" style="margin-bottom: 10px" type="password" />
 		                            </div>
 		                        </div>
 		                        <div id="div_id_password" class="form-group required">
 		                        	<label for="id_password" class="control-label col-md-4  requiredField">Confirm Password
-		                        		<span class="asteriskField">*</span> 
+		                        		<span class="asteriskField">*</span>
 		                        	</label>
-		                            <div class="controls col-md-8 "> 
+		                            <div class="controls col-md-8 ">
 		                                <input class="input-md textinput textInput form-control" id="id_password" name="c" placeholder="Create a password" style="margin-bottom: 10px" type="password" />
 		                            </div>
 		                        </div>
-		                        <div id="div_id_name" class="form-group required"> 
+		                        <div id="div_id_name" class="form-group required">
 		                        	<label for="id_name" class="control-label col-md-4  requiredField"> Full name
-		                        		<span class="asteriskField">*</span> 
-		                            </label> 
-		                            <div class="controls col-md-8 "> 
+		                        		<span class="asteriskField">*</span>
+		                            </label>
+		                            <div class="controls col-md-8 ">
 		                                <input class="input-md textinput textInput form-control" id="id_name" name="name" placeholder="Your Frist name and Last name" style="margin-bottom: 10px" type="text" />
 		                            </div>
 								</div>
 		                        <div id="div_id_gender" class="form-group required">
 		                        	<label for="id_gender"  class="control-label col-md-4  requiredField"> Gender
-		                        		<span class="asteriskField">*</span> 
+		                        		<span class="asteriskField">*</span>
 		                        	</label>
 		                        	<div class="controls col-md-8 "  style="margin-bottom: 10px">
-		                                 <label class="radio-inline"> 
+		                                 <label class="radio-inline">
 		                                 	<input type="radio" name="gender" id="id_gender_1" value="Male"  style="margin-bottom: 10px">Male
 		                                 </label>
-		                                 <label class="radio-inline"> 
-		                                 	<input type="radio" name="gender" id="id_gender_2" value="Female"  style="margin-bottom: 10px">Female 
+		                                 <label class="radio-inline">
+		                                 	<input type="radio" name="gender" id="id_gender_2" value="Female"  style="margin-bottom: 10px">Female
 		                                 </label>
 		                            </div>
 		                        </div>
-		                        <div id="div_id_company" class="form-group required"> 
+		                        <div id="div_id_company" class="form-group required">
 		                        	<label for="id_company" class="control-label col-md-4  requiredField"> Company name
-		                            		<span class="asteriskField">*</span> 
-		                            	 /Profession<span class="asteriskField">*</span> 
+		                            		<span class="asteriskField">*</span>
+		                            	 /Profession<span class="asteriskField">*</span>
 		                            	</label>
-		                            <div class="controls col-md-8 "> 
+		                            <div class="controls col-md-8 ">
 		                                 <input class="input-md textinput textInput form-control" id="id_company" name="profession" placeholder="Your company name" style="margin-bottom: 10px" type="text" />
 		                            </div>
 		                        </div>
 		                        <div id="div_id_number" class="form-group required">
 		                             <label for="id_number" class="control-label col-md-4  requiredField"> Contact Number
-		                             	<span class="asteriskField">*</span> 
+		                             	<span class="asteriskField">*</span>
 		                             </label>
 		                             <div class="controls col-md-8 ">
-		                                 <input class="input-md textinput textInput form-control" id="id_number" name="contractnumber" placeholder="provide your number" style="margin-bottom: 10px" type="text" />
-		                            </div> 
+		                                 <input type="number" class="input-md textinput textInput form-control" id="id_number" name="contractnumber" placeholder="provide your number" style="margin-bottom: 10px" type="text" />
+		                            </div>
 		                        </div>
 		                        <div id="div_id_location" class="form-group required">
 		                            <label for="id_location" class="control-label col-md-4  requiredField"> Your Location
-		                            	<span class="asteriskField">*</span> 
+		                            	<span class="asteriskField">*</span>
 		                            </label>
 		                            <div class="controls col-md-8 ">
 		                                <input class="input-md textinput textInput form-control" id="id_location" name="location" placeholder="Your Pincode and City" style="margin-bottom: 10px" type="text" />
-		                            </div> 
+		                            </div>
 		                        </div>
 		                        <input type="submit" value="SignUp" name="submit" id="signup">
 							</form>
@@ -275,49 +270,55 @@
 		<div class="container">
 
 			<div class="row">
-    			<div class="col-sm-4" >
+    			<div class="col-sm-3" >
 					<div class="csi-single-tab">
                         <div class="menu-thumb">
-                        <a><img src="images/coverpic1.jpeg" alt=""></a>
+                        <a><img src="images/coverpic1.jpeg" style="width: 374px;height: 255px;" alt=""></a>
                     	</div>
                     </div>
    				</div>
-	   			
-	    			<div class="col-sm-4" >
+	   			    <div class="col-sm-1"></div>
+
+	    			<div class="col-sm-3" >
 						<div class="csi-single-tab">
 	                        <div class="menu-thumb">    
-	                        <a><img src="images/coverpic2.jpeg" alt=""></a>       
-							<p  style="text-align: justify;">Pets are humanizing . they remind us we have an obligation and responsibility to preserve and nurture and care for all life.<br>
-							Every animal has his or her story , his or her thoughts, daydreams and interests and fear joy and love. All deserve that the human animal afford them the respect of being cared for with glyphicon-arrow-righteat consideration for those interests or left in peace.</p>
+	                            <a><img src="images/coverpic2.jpeg" style="width: 374px;height: 255px;"alt=""></a>
+
 		                	</div>
 	   					</div>
 					</div>
-
-					<div class="col-sm-4" >
+                    <div class="col-sm-1"></div>
+					<div class="col-sm-3" >
 						<div class="csi-single-tab">
 							<div class="menu-thumb">
-							<a><img src="images/coverpic3.jpeg" alt=""></a>	
+							<a><img src="images/coverpic3.jpeg"  style="width: 374px;height: 255px;" alt=""></a>
 							</div>
 						</div>
 					</div>
 				
 			</div>
+            <div class="row" style="margin-top: 30px;margin-bottom: 30px;">
+                <div class="col-lg-12 ">
+                    <p  style="text-align: justify;">Pets are humanizing . they remind us we have an obligation and responsibility to preserve and nurture and care for all life.<br>
+                        Every animal has his or her story , his or her thoughts, daydreams and interests and fear joy and love. All deserve that the human animal afford them the respect of being cared for with glyphicon-arrow-righteat consideration for those interests or left in peace.</p>
+                </div>
+            </div>
 
 
 			<h3 class="agileits-title">Need More Services?</h3>
 			<div class="top_tabs_agile">
 				<div id="horizontalTab" class="top_tabs_agile">
 					<ul class="resp-tabs-list">
-						<li>
-							<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Dog Health Care
+						<li style="margin: 8px;">
+							<i class="fa fa-thumbs-o-up"  aria-hidden="true"></i>Dog Health Care
 						</li>
-						<li>
+						<li style="margin: 8px">
 							<i class="fa fa-random" aria-hidden="true"></i> Pet Vaccinations
 						</li>
-						<li>
+						<li style="margin: 8px">
 							<i class="fa fa-cogs" aria-hidden="true"></i> Support Adoption
 						</li>
-						<li>
+						<li style="margin: 8px">
 							<i class="fa fa-shield" aria-hidden="true"></i>Pet Barber Service
 						</li>
 					</ul>

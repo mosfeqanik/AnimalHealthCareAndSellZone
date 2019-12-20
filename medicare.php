@@ -20,6 +20,40 @@
 	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
 	<link href="css/font-awesome.css" rel="stylesheet">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;}
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
 	<!-- font-awesome icons -->
 	<!-- //Custom Theme files -->
 	<!-- js -->
@@ -102,6 +136,94 @@ include"header.php";
 	</div>
 	<!-- //gallery -->
 
+    <?php
+    include "Src/Database.php";
+    $postin= new Database();
+    if(isset($_POST["submit"])) {
+        $uname = $_POST["uname"];
+        $pname = $_POST["pname"];
+        $Symptoms = $_POST["Symptoms"];
+        $animal = $_POST["animal"];
+        $description = $_POST["description"];
+        $postin->postinsert($uname,$pname,$Symptoms,$animal,$description);
+
+    }
+    $allposts=$postin->readpostdata();
+
+    ?>
+
+
+    <div class="postSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <h3>Post Your problem Vet will help You</h3>
+                        <form action="#"method="post">
+                            <label for="fname">Name</label>
+                            <input type="text" id="fname" name="uname" placeholder="Your name..">
+
+                            <label for="fname">Name</label>
+                            <input type="text" id="fname" name="pname" placeholder="Your pet name..">
+
+                            <label for="fname">Symptoms</label>
+                            <input type="text" id="fname" name="Symptoms" placeholder="Symptoms..">
+
+                            <label for="country">Animal</label>
+                            <select id="animal" name="animal">
+                                <option value="Dog">Dog</option>
+                                <option value="Cat">Cat</option>
+                                <option value="Bird">Bird</option>
+                                <option value="others">others</option>
+                            </select>
+
+                            <label for="subject">Description</label>
+                            <textarea id="subject" name="description" placeholder="Write a description.." style="height:200px"></textarea>
+
+                            <input type="submit" value="Submit" name="submit">
+                        </form>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="posts">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <?php
+                foreach ($allposts as $post) {
+
+                    ?>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="post-title" href="medicare2.php?post_id=<?php  echo $post['post_id'];?>"><strong><?php echo $post['Symptoms']; ?></strong></h4>
+                        </div>
+                    </div>
+
+                    <div class="row post-content">
+                        <div class="content-container clearfix">
+                            <div class="col-md-12">
+
+                                <ul class="mail-list">
+                                    <li>
+                                        <a href="#">
+                                            <span class="subtopic_description"><?php echo $post['description']; ?></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <?Php
+                }
+                ?>
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<!-- /services -->
 	<div class="agile_secives " id="services">
@@ -469,30 +591,13 @@ include"header.php";
 		
 	</div>
 
-
-
-
 </div>
 
 
 
-	<!-- copy rights start here -->
-	<div class="copy-w3right">
-		<div class="container">
-			<div class="top-nav bottom-w3lnav">
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="medicare.php">Medicare</a></li>
-					<li><a href="catagories.php">Catagories</a></li>
-					<li><a href="foods.php">Foods</a></li>
-					<li><a href="accessories.php">Accessories</a></li>
-					<li><a href="about.php">About</a></li>
-				</ul>
-			</div>
-			<p>© 2019 Animal Care Zone : All Rights Reserved</p>
-		</div>
-	</div>
-	<!-- //copy right end here -->
+<?php
+include "footer.php";
+?>
 	<!-- password-script -->
 	<script type="text/javascript">
 		window.onload = function () {

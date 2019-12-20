@@ -21,16 +21,16 @@ $register = new Database();
             $password = $pass1;
             if (isset($_POST["submit"])) {
 
-                $usertype   =   $_POST["usertype"];
-                $username   =   $_POST["username"];
-                $email      =   $_POST["email"];
-                $name       =   $_POST["name"];
-                $gender     =   $_POST["gender"];
-                $profession   =   $_POST["profession"];
-                $contractnumber =   $_POST["contractnumber"];
-                $location   =   $_POST["location"];
+                $usertype   =   $_POST['usertype'];
+                $username   =   $_POST['username'];
+                $email      =   $_POST['email'];
+                $name       =   $_POST['name'];
+                $gender     =   $_POST['gender'];
+                $profession   =   $_POST['profession'];
+                $contractnumber =   $_POST['contractnumber'];
+                $location   =   $_POST['location'];
                 $password;
-                $register->register($username,$usertype,$email,$name,$gender,$profession,$contractnumber,$location,$password);
+                $register->register($usertype,$username,$email,$name,$gender,$profession,$contractnumber,$location,$password);
 
         }
 
