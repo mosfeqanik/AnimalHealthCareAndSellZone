@@ -17,8 +17,8 @@
 		}
 	</script>
 	<!-- Custom Theme files -->
-	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
 	<link href="css/font-awesome.css" rel="stylesheet">
     <style>
         body {font-family: Arial, Helvetica, sans-serif;}
@@ -50,9 +50,14 @@
 
         .container {
             border-radius: 5px;
-            background-color: #f2f2f2;
             padding: 20px;
         }
+        .banner-top p {
+            font-size: 1em;
+            text-align: center;
+            letter-spacing: 5px;
+        }
+
     </style>
 	<!-- font-awesome icons -->
 	<!-- //Custom Theme files -->
@@ -72,7 +77,7 @@ include"header.php";
 ?>
 
 <!-- gallery -->
-	<div class="gallery">
+	<div class="gallery" style="padding: 1rem 0">
 		<div class="container">
 			<h3 class="agileits-title">Nutrition</h3>
 			<div class="gallery-agileinfo">
@@ -130,40 +135,84 @@ include"header.php";
 				</script>
 					    
 				    </div>
-				</div>
-			</div>
+            <div class="gallery-agileinfo">
+                <div class="col-sm-2 col-xs-6 w3gallery-grids">
+                </div>
+                <div class="col-sm-4 col-xs-6 w3gallery-grids">
+                    <a href="images/goat1.jpg" class="imghvr-hinge-right figure">
+                        <img src="images/goat1.jpg" alt="" title="Pets Care Image"/>
+                        <div class="agile-figcaption">
+                            <h4>Goat</h4>
+                            <p>Add Some Description</p>
+                        </div>
+                    </a>
+                    <button onclick="location.href='Goat.php';" id="mybtngoat" type="button" href="#" data-target="#myModal2" class="btn btn-info center-block" aria-hidden="true">Details</button>
+                </div>
+
+                <script type="text/javascript">
+                    document.getElementById("mybtngoat").onclick = function () {
+                        location.href = "Goat.php";
+                    };
+                </script>
+
+
+                <div class="col-sm-4 col-xs-6 w3gallery-grids">
+                    <a href="images/cow.jpg" class="imghvr-hinge-right figure">
+                        <img src="images/cow.jpg" alt="" title="Pets Care Image"/>
+                        <div class="agile-figcaption">
+                            <h4>Cow</h4>
+                            <p>Add Some Description</p>
+                        </div>
+                    </a>
+                    <button onclick="location.href='Cow.php';" id="mybtncow" type="button" href="#" data-target="#myModal2" class="btn btn-info center-block" aria-hidden="true">Details</button>
+                </div>
+
+                <script type="text/javascript">
+                    document.getElementById("mybtncow").onclick = function () {
+                        location.href = "Cow.php";
+                    };
+                </script>
+
+
+                <div class="col-sm-2 col-xs-6 w3gallery-grids">
+                </div>
+            </div>
 		</div>
 	</div>
 	<!-- //gallery -->
-
-    <?php
-    include "Src/Database.php";
-    $postin= new Database();
-    if(isset($_POST["submit"])) {
-        $uname = $_POST["uname"];
-        $pname = $_POST["pname"];
-        $Symptoms = $_POST["Symptoms"];
-        $animal = $_POST["animal"];
-        $description = $_POST["description"];
-        $postin->postinsert($uname,$pname,$Symptoms,$animal,$description);
-
-    }
-    $allposts=$postin->readpostdata();
-
-    ?>
-
-
+        <div class="gallery1" style="text-align: center;padding: 1px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <a href="PostandCommentViewMedicare.php">
+                            <button type="button" class="btn .btn-lg btn-success" style="font-size:20px;">Post with Comment</button>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="PostandCommentMedicare.php">
+                            <button type="button" class="btn .btn-lg btn-danger" style="font-size:20px;">Posts</button>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="Searchposts.php">
+                            <button type="button" class="btn .btn-lg btn-info" style="font-size:20px;">Search </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     <div class="postSection">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3"></div>
                 <div class="col-lg-6">
-                    <h3>Post Your problem Vet will help You</h3>
-                        <form action="#"method="post">
-                            <label for="fname">Name</label>
+                    <h3>Post </h3>
+                    <h3>Your problem Vet will help You</h3>
+                        <form action="postcreated.php"method="post">
+                            <label for="fname">Your Name</label>
                             <input type="text" id="fname" name="uname" placeholder="Your name..">
 
-                            <label for="fname">Name</label>
+                            <label for="fname">Your pet Name</label>
                             <input type="text" id="fname" name="pname" placeholder="Your pet name..">
 
                             <label for="fname">Symptoms</label>
@@ -174,7 +223,8 @@ include"header.php";
                                 <option value="Dog">Dog</option>
                                 <option value="Cat">Cat</option>
                                 <option value="Bird">Bird</option>
-                                <option value="others">others</option>
+                                <option value="Cow">Cow</option>
+                                <option value="Goat">Goat</option>
                             </select>
 
                             <label for="subject">Description</label>
@@ -187,57 +237,19 @@ include"header.php";
             </div>
         </div>
     </div>
-
-
-    <div class="posts">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <?php
-                foreach ($allposts as $post) {
-
-                    ?>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4 class="post-title" href="medicare2.php?post_id=<?php  echo $post['post_id'];?>"><strong><?php echo $post['Symptoms']; ?></strong></h4>
-                        </div>
-                    </div>
-
-                    <div class="row post-content">
-                        <div class="content-container clearfix">
-                            <div class="col-md-12">
-
-                                <ul class="mail-list">
-                                    <li>
-                                        <a href="#">
-                                            <span class="subtopic_description"><?php echo $post['description']; ?></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <?Php
-                }
-                ?>
-                </div>
-            </div>
-        </div>
-    </div>
-
 	<!-- /services -->
 	<div class="agile_secives " id="services">
 		<div class="container">
-			<h3 class="agileits-title two">What we Do</h3>
+			<h3 class="agileits-title two" style="color: #000;font-family: Arial; ">What we Do</h3>
 			<div class="markets-grids">
 				<div class="col-md-4 w3ls-markets-grid">
 					<div class="agileits-icon-grid">
 						<div class="icon-left">
 							<i class="fa fa-eye" aria-hidden="true"></i>
 						</div>
-						<div class="icon-right">
-							<h5>Dog Walking</h5>
-							<p> Give traingin how to dog waking ...</p>
+						<div class="icon-right" >
+							<h5 style="color: #000;font-family: Arial; ">Dog Walking</h5>
+							<p style="color: #292727ab"> Give traingin how to dog waking ...</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -247,9 +259,9 @@ include"header.php";
 						<div class="icon-left">
 							<i class="fa fa-ambulance" aria-hidden="true"></i>
 						</div>
-						<div class="icon-right">
-							<h5>Pet Grooming</h5>
-							<p>Feeding, Breading etc...</p>
+						<div class="icon-right" style="color: #000">
+							<h5 style="color: #000;font-family: Arial; ">Pet Grooming</h5>
+							<p style="color: #292727ab">Feeding, Breading etc...</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -260,8 +272,8 @@ include"header.php";
 							<i class="fa fa-medkit" aria-hidden="true"></i>
 						</div>
 						<div class="icon-right">
-							<h5>Pet Sitting</h5>
-							<p>Training how to seatting and so on...</p>
+							<h5 style="color: #000;font-family: Arial; ">Pet Sitting</h5>
+							<p style="color: #292727ab">Training how to seatting and so on...</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -272,8 +284,8 @@ include"header.php";
 							<i class="fa fa-flask" aria-hidden="true"></i>
 						</div>
 						<div class="icon-right">
-							<h5>Pet Daycare</h5>
-							<p>Take care of your pets. Emergency services!...</p>
+							<h5 style="color: #000;font-family: Arial; ">Pet Daycare</h5>
+							<p style="color: #292727ab">Take care of your pets. Emergency services!...</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -284,8 +296,8 @@ include"header.php";
 							<i class="fa fa-line-chart" aria-hidden="true"></i>
 						</div>
 						<div class="icon-right">
-							<h5>Veterinary Help</h5>
-							<p>All kind of veterinary are avialable!...</p>
+							<h5 style="color: #000;font-family: Arial; " >Veterinary Help</h5>
+							<p style="color: #292727ab">All kind of veterinary are avialable!...</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -296,8 +308,8 @@ include"header.php";
 							<i class="fa fa-clock-o" aria-hidden="true"></i>
 						</div>
 						<div class="icon-right">
-							<h5>Visiting Hours</h5>
-							<p>Everyday at 9.00AM to 5.00 PM... </p>
+							<h5 style="color: #000;font-family: Arial; ">Visiting Hours</h5>
+							<p style="color: #292727ab">Everyday at 9.00AM to 5.00 PM... </p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -319,7 +331,7 @@ include"header.php";
  	<div class="row" style="padding-bottom: 20px;">
   
     	<div class="col-sm-4"> 
-      			<div align="center" style="border: 1px solid red;" >       			
+      			<div align="center" style="border: 1px solid red; padding-top: 35px;" >
       				<h3>Dr.Siamak</h3>
       				<p>**He attends house calls.<br>
 						Phone # 8917249;<br>
@@ -336,7 +348,7 @@ include"header.php";
 		</div>
 
 		<div class="col-sm-4"> 
-      			<div align="center" style="border: 1px solid red;" >       			
+      			<div align="center" style="border: 1px solid red; padding-top: 35px;" >
       				<h3>Dr. Motahar Hossain </h3>
       				<p>  **He attends house calls.<br>
 						Enlisted vet of USA embassy<br>
@@ -354,7 +366,7 @@ include"header.php";
 		</div>
 
 		<div class="col-sm-4"> 
-      			<div align="center" style="border: 1px solid red;" >       			
+      			<div align="center" style="border: 1px solid red;padding-top: 35px;" >
       				<h3>Dr. K. B. M. Saiful Islam</h3>
       				<p>** Home calls (on request)<br>
 							Vet & Pet Care<br>
@@ -374,7 +386,7 @@ include"header.php";
 	<div class="row" style="padding-bottom: 20px;">
   
     	<div class="col-sm-4"> 
-      			<div align="center" style="border: 1px solid red;" >       			
+      			<div align="center" style="border: 1px solid red; padding-top: 35px;" >
       				<h3>Dr. Md. Luthfor Rahman</h3>
       				<p>**He attends house Calls.<br>
 						Cell # 01552457085, 01731492093<br>
@@ -390,7 +402,7 @@ include"header.php";
 		</div>
 
 		<div class="col-sm-4"> 
-      			<div align="center" style="border: 1px solid red;" >       			
+      			<div align="center" style="border: 1px solid red;padding-top: 35px;" >
       				<h3>Dr.Azmat Ali</h3>
       				<p>**He attends House calls<br>
 						Phone: 9883486, 01912-013615, 01715-078434<br>
@@ -406,7 +418,7 @@ include"header.php";
 		</div>
 
 		<div class="col-sm-4"> 
-      			<div align="center" style="border: 1px solid red;" >       			
+      			<div align="center" style="border: 1px solid red;padding-top: 35px;" >
       				<h3>Dr.Md.Shahidul Islam</h3>
       				<p>Cell#01711364651<br>
 						Central Veterinary Hospital<br>
@@ -425,7 +437,7 @@ include"header.php";
 	<div class="row" style="padding-bottom: 20px;">
   
     	<div class="col-sm-4"> 
-      			<div align="center" style="border: 1px solid red;" >       			
+      			<div align="center" style="border: 1px solid red; padding-top: 35px;" >
       				<h3>Dr.Kazi Mujibur Rahman</h3>
       				<p>Ex-Chief vet of Central Veterinary Hospital,Dhaka<br>
 					Cell #01715016218</p>
@@ -433,7 +445,7 @@ include"header.php";
 		</div>
 
 		<div class="col-sm-4"> 
-      			<div align="center" style="border: 1px solid red;" >       			
+      			<div align="center" style="border: 1px solid red; padding-top: 35px;" >
       				<h3>Dr. Abdullah-Al-Mujahid</h3>
       				<p> 01715728760.<br>
       					.<br>
@@ -443,7 +455,7 @@ include"header.php";
 		</div>
 
 		<div class="col-sm-4"> 
-      			<div align="center" style="border: 1px solid red;" >       			
+      			<div align="center" style="border: 1px solid red; padding-top: 35px;" >
       				<h3> Dr.Mohammad Shariful Haque</h3>
       				<p> Phone # 8619706; Cell # 0173046585<br>
 						ElephantRoad. .<br>
@@ -456,14 +468,14 @@ include"header.php";
 	<div class="row" style="padding-bottom: 20px;">
   
     	<div class="col-sm-4"> 
-      			<div align="center" style="border: 1px solid red;" >       			
+      			<div align="center" style="border: 1px solid red;padding-top: 35px;" >
       				<h3>Dr. Lf. Col Shahjada </h3>   
       				   	<p>Cell # 01711123288 Bangladesh Army (vet)</p>
       			</div>
 		</div>
 
 		<div class="col-sm-4"> 
-      			<div align="center" style="border: 1px solid red;" >       			
+      			<div align="center" style="border: 1px solid red;padding-top: 35px;" >
       				<h3>Dr. Aravinda</h3>
       				<p> Cell # 01936617437
       					.<br>
@@ -482,14 +494,14 @@ include"header.php";
 	<div class="row" style="padding-bottom: 20px;">
 
 		<div class="col-sm-4">
-			<div align="center" style="border: 1px solid blue;">	
+			<div align="center" style="border: 1px solid blue; padding-top: 35px;">
 				<h3>Chittagaong Vetenary and Animal Science University</h3>
 				<p>zakir hossain road, khulshi. ctg-4202</p>
 			</div>
 		</div>
 			
 		<div class="col-sm-4">
-			<div align="center" style="border: 1px solid blue;">	
+			<div align="center" style="border: 1px solid blue; padding-top: 35px;">
 				<h3>Dr. Bibek Chandra</h3>
 				<p>Cell # 01711057533 sutradhar
 					.<br>
@@ -500,7 +512,7 @@ include"header.php";
 		</div>	
 
 		<div class="col-sm-4">
-			<div align="center" style="border: 1px solid blue;">
+			<div align="center" style="border: 1px solid blue;   padding-top: 35px">
 				<h3>Dr.Monowar sayeed</h3>
 				<p>Cell # 01736930901 pallab.<br>
 					.<br>
@@ -516,14 +528,14 @@ include"header.php";
 	<div class="row" style="padding-bottom: 20px;">
 
 		<div class="col-sm-4">
-			<div align="center" style="border: 1px solid blue;">	
+			<div align="center" style="border: 1px solid blue;padding-top: 35px">
 				<h3>Dr. Morshed</h3>
 				<p>Cell # 01192046813</p>
 			</div>
 		</div>
 			
 		<div class="col-sm-4">
-			<div align="center" style="border: 1px solid blue;">	
+			<div align="center" style="border: 1px solid blue;padding-top: 35px">
 				<h3>Dr. Farhad</h3>
 				<p>Cell # 01711172139</p>
 			</div>
@@ -537,7 +549,7 @@ include"header.php";
 	<div class="row" style="padding-bottom: 20px;">
 
 		<div class="col-sm-4">
-			<div align="center" style="border: 1px solid blue;">	
+			<div align="center" style="border: 1px solid blue;padding-top: 35px">
 				<h3>Dr. A T M Mahbub E Elahi</h3>
 				<p>Professor, Dept of Microbiology, SAU<br>
 					Cell # 01711301042<br>
@@ -546,7 +558,7 @@ include"header.php";
 		</div>
 			
 		<div class="col-sm-4">
-			<div align="center" style="border: 1px solid blue;">	
+			<div align="center" style="border: 1px solid blue;padding-top: 35px">
 				<h3>Dr. Syed Sayem Uddin Ahmed</h3>
 				<p>Dept of Public Health<br>
 					Cell # 01947706956<br>
@@ -555,7 +567,7 @@ include"header.php";
 		</div>	
 
 		<div class="col-sm-4">
-			<div align="center" style="border: 1px solid blue;">
+			<div align="center" style="border: 1px solid blue;padding-top: 35px">
 				<h3>DR. Animesh Roy</h3>
 				<p>VS, SAU Vet Clinics<br>
 					Cell # 01717896167<br>
@@ -570,7 +582,7 @@ include"header.php";
 	<div class="row" style="padding-bottom: 20px;">
 
 		<div class="col-sm-4">
-			<div align="center" style="border: 1px solid blue;">	
+			<div align="center" style="border: 1px solid blue;padding-top: 35px">
 				<h3>DR. Mahbub</h3>
 				<p>VS, District Vet. Hospital, Sylhet<br>
 					Cell # 01711287533
@@ -581,7 +593,7 @@ include"header.php";
 		</div>
 			
 		<div class="col-sm-4">
-			<div align="center" style="border: 1px solid blue;">	
+			<div align="center" style="border: 1px solid blue;padding-top: 35px">
 				<h3>Dr. Rofiqul Islam</h3>
 				<p>Dept of Medicine,SAU <br>
 					Cell # 01199008496 
@@ -598,6 +610,8 @@ include"header.php";
 <?php
 include "footer.php";
 ?>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 	<!-- password-script -->
 	<script type="text/javascript">
 		window.onload = function () {
@@ -655,6 +669,14 @@ include "footer.php";
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="js/bootstrap.js"></script>
+
+    <script src="text/javascript">
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 2000);</script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>

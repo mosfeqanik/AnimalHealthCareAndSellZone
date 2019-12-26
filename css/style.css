@@ -595,7 +595,7 @@ h5.w3l-subtitle {
 /*-- team --*/
 
 .team {
-	background: url(../images/2.jpg) no-repeat 0px 0px;
+	background: url(../images/img3.jpg) no-repeat 0px 0px;
 	background-size: cover;
 }
 
@@ -841,7 +841,7 @@ h3.agileits-title {
 }
 
 h3.agileits-title.two {
-	color: #fff;
+	color: #000;
 }
 
 h3.agileits-title span {

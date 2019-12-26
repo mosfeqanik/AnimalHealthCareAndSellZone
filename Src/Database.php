@@ -73,7 +73,7 @@ class Database{
 
                 $_SESSION['message'] = $msg;
                 $_SESSION['message'];
-                header('location:../index.php');
+                header('Location:../index.php');
             }
         }
     }
@@ -135,10 +135,12 @@ class Database{
                 ":Symptoms"=>$Symptoms,
                 ":animal"=>$animal,
                 ":description"=>$description,
-
             )
         );
 
+        echo "You have Posted successfully!";
+        header("Location: PostandCommentMedicare.php");
+        exit();
     }
 
     //show posts
@@ -151,19 +153,61 @@ class Database{
         return $result;
 
     }
-    public function ShowBypostId($post_id )
+    //post insert method
+    public function commentInsert($post_id,$comment)
     {
-        $Select="SELECT * FROM users WHERE post_id=:post_id";
+        $registration_query="INSERT INTO comments (post_id,comment)VALUES (:post_id,:comment)";
+        $statement=$this->conn->prepare($registration_query);
+        $statement->execute
+        (
+            array
+            (
+                ":post_id"=>$post_id,
+                ":comment"=>$comment
+            )
+        );
+
+        echo "You have successfully! Added comment";
+        header("Location: PostandCommentViewMedicare.php");
+        exit();
+    }
+    //show posts and comments
+    public function readcommentdata()
+    {
+        $Select="SELECT * FROM comments";
+        $statement=$this->conn->prepare($Select);
+        $statement->execute();
+        $result = $statement->fetchAll();
+        return $result;
+
+    }
+
+    //show posts by id
+    public function ShowPostById($post_id)
+    {
+        $Select="SELECT * FROM posts WHERE post_id=:post_id";
         $statement=$this->conn->prepare($Select);
         $statement->execute
         (
             array(':post_id' =>$post_id  )
-
         );
         $result = $statement->fetchAll();
         return $result;
     }
 
+    //permanent delete for comments
+    public function Delete($comments_id )
+    {
+        $delete="DELETE FROM comments WHERE comments_id=:comments_id";
+        $statement=$this->conn->prepare($delete);
+        $statement->execute
+        (
+            array(':comments_id' =>$comments_id  )
+
+        );
+        $result = $statement->fetchAll();
+        return $result;
+    }
 
 }
 

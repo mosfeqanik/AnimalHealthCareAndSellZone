@@ -8,9 +8,9 @@
 							
 						</li>
 						<li>
-							<p><span class="glyphicon glyphicon-earphone"></span> +88 0173 478770  </p>
+                                <p><span class="glyphicon glyphicon-earphone"></span> +88 0173 478770  </p>
 						</li>
-						<li><a class="sign" href="#" data-toggle="modal" data-target="#myModal3"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>
+						<li><a class="sign" href="#" data-toggle="modal" data-target="#myModal3"><i class="fa fa-sign-in" aria-hidden="true"></i> Create an Account</a>
 						</li>
 					</ul>
 				</div>
