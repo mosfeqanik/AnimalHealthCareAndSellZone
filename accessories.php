@@ -50,7 +50,7 @@ include"header.php";
                                 <div class="csi-info">
                                     <div class="title-area">
                                         <h3> Square Cages </h3>
-                                         <p class="price">200-15000<span>৳</span></p>
+                                         <strong class="price">200-15000<span>৳</span></strong>
                                     </div>
                                 </div> <!--//.single tab-->
                             </div>
@@ -67,7 +67,7 @@ include"header.php";
 	                                <div class="csi-info">
 	                                    <div class="title-area">
 	                                        <h3> Travelling Cages </h3>
-	                                         <p class="price">1000-15000<span>৳</span></p>
+	                                         <strong class="price">1000-15000<span>৳</span></strong>
 	                                    </div>
 	                                </div> <!--//.single tab-->
 	                            </div>
@@ -84,7 +84,7 @@ include"header.php";
                                 <div class="csi-info">
                                     <div class="title-area">
                                         <h3> Bathing Cages </h3>
-                                         <p class="price">1000-15000<span>৳</span></p>
+                                         <strong class="price">1000-15000<span>৳</span></strong>
                                     </div>
                                 </div> <!--//.single tab-->
                             </div>
@@ -101,7 +101,7 @@ include"header.php";
 	                                <div class="csi-info">
 	                                    <div class="title-area">
 	                                        <h3> Perches </h3>
-	                                         <p class="price">100-1500<span>৳</span></p>
+	                                         <strong class="price">100-1500<span>৳</span></strong>
 	                                    </div>
 	                                </div> <!--//.single tab-->
 	                            </div>
@@ -118,7 +118,7 @@ include"header.php";
                                 <div class="csi-info">
                                     <div class="title-area">
                                         <h3> Ladders </h3>
-                                         <p class="price">100-1500<span>৳</span></p>
+                                         <strong class="price">100-1500<span>৳</span></strong>
                                     </div>
                                 </div> <!--//.single tab-->
                             </div>
@@ -135,7 +135,7 @@ include"header.php";
 	                                <div class="csi-info">
 	                                    <div class="title-area">
 	                                        <h3> Food Dishes </h3>
-	                                         <p class="price">100-1000<span>৳</span></p>
+	                                         <strong class="price">100-1000<span>৳</span></strong>
 	                                    </div>
 	                                </div> <!--//.single tab-->
 	                            </div>
@@ -152,7 +152,7 @@ include"header.php";
                                 <div class="csi-info">
                                     <div class="title-area">
                                         <h3> Water Dishes </h3>
-                                         <p class="price">100-1000<span>৳</span></p>
+                                         <strong class="price">100-1000<span>৳</span></strong>
                                     </div>
                                 </div> <!--//.single tab-->
                             </div>
@@ -169,7 +169,7 @@ include"header.php";
 	                                <div class="csi-info">
 	                                    <div class="title-area">
 	                                        <h3> Water Bottle </h3>
-	                                         <p class="price">50-1000<span>৳</span></p>
+	                                         <strong class="price">50-1000<span>৳</span></strong>
 	                                    </div>
 	                                </div> <!--//.single tab-->
 	                            </div>
@@ -186,7 +186,7 @@ include"header.php";
                                 <div class="csi-info">
                                     <div class="title-area">
                                         <h3> Spray Bottle </h3>
-                                         <p class="price">100-1500<span>৳</span></p>
+                                         <strong class="price">100-1500<span>৳</span></strong>
                                     </div>
                                 </div> <!--//.single tab-->
                             </div>
@@ -203,7 +203,7 @@ include"header.php";
 	                                <div class="csi-info">
 	                                    <div class="title-area">
 	                                        <h3> Nail Clippers </h3>
-	                                         <p class="price">50-1000<span>৳</span></p>
+	                                         <strong class="price">50-1000<span>৳</span></strong>
 	                                    </div>
 	                                </div> <!--//.single tab-->
 	                            </div>
@@ -220,7 +220,7 @@ include"header.php";
                                 <div class="csi-info">
                                     <div class="title-area">
                                         <h3> Nest Boxes </h3>
-                                         <p class="price">100-1000<span>৳</span></p>
+                                         <strong class="price">100-1000<span>৳</span></strong>
                                     </div>
                                 </div> <!--//.single tab-->
                             </div>
@@ -237,7 +237,7 @@ include"header.php";
 	                                <div class="csi-info">
 	                                    <div class="title-area">
 	                                        <h3> Nest Covers </h3>
-	                                         <p class="price">50-1000<span>৳</span></p>
+	                                         <strong class="price">50-1000<span>৳</span></strong>
 	                                    </div>
 	                                </div> <!--//.single tab-->
 	                            </div>
@@ -254,7 +254,7 @@ include"header.php";
                                 <div class="csi-info">
                                     <div class="title-area">
                                         <h3> Plain White Paper Towel </h3>
-                                         <p class="price">1000-15000<span>৳</span></p>
+                                         <strong class="price">1000-15000<span>৳</span></strong>
                                     </div>
                                 </div> <!--//.single tab-->
                             </div>
@@ -271,7 +271,7 @@ include"header.php";
 	                                <div class="csi-info">
 	                                    <div class="title-area">
 	                                        <h3> Bottle Brush </h3>
-	                                         <p class="price">500-15000<span>৳</span></p>
+	                                         <strong class="price">500-15000<span>৳</span></strong>
 	                                    </div>
 	                                </div> <!--//.single tab-->
 	                            </div>
@@ -288,7 +288,7 @@ include"header.php";
                                 <div class="csi-info">
                                     <div class="title-area">
                                         <h3> Swinging Perches </h3>
-                                         <p class="price">50-1000<span>৳</span></p>
+                                         <strong class="price">50-1000<span>৳</span></strong>
                                     </div>
                                 </div> <!--//.single tab-->
                             </div>
@@ -305,7 +305,7 @@ include"header.php";
 	                                <div class="csi-info">
 	                                    <div class="title-area">
 	                                        <h3> Foraging Toys </h3>
-	                                         <p class="price">100-1000<span>৳</span></p>
+	                                         <strong class="price">100-1000<span>৳</span></strong>
 	                                    </div>
 	                                </div> <!--//.single tab-->
 	                            </div>
@@ -322,7 +322,7 @@ include"header.php";
                                 <div class="csi-info">
                                     <div class="title-area">
                                         <h3> Chewable Toys </h3>
-                                         <p class="price">100-1500<span>৳</span></p>
+                                         <strong class="price">100-1500<span>৳</span></strong>
                                     </div>
                                 </div> <!--//.single tab-->
                             </div>
@@ -339,7 +339,7 @@ include"header.php";
 	                                <div class="csi-info">
 	                                    <div class="title-area">
 	                                        <h3> Mirror Toys </h3>
-	                                         <p class="price">100-1500<span>৳</span></p>
+	                                         <strong class="price">100-1500<span>৳</span></strong>
 	                                    </div>
 	                                </div> <!--//.single tab-->
 	                            </div>
@@ -356,7 +356,7 @@ include"header.php";
                                 <div class="csi-info">
                                     <div class="title-area">
                                         <h3> Cage Lamp </h3>
-                                         <p class="price">100-1500<span>৳</span></p>
+                                         <strong class="price">100-1500<span>৳</span></strong>
                                     </div>
                                 </div> <!--//.single tab-->
                             </div>
@@ -373,7 +373,7 @@ include"header.php";
 	                                <div class="csi-info">
 	                                    <div class="title-area">
 	                                        <h3> Cage Stands </h3>
-	                                         <p class="price">100-1500<span>৳</span></p>
+	                                         <strong class="price">100-1500<span>৳</span></strong>
 	                                    </div>
 	                                </div> <!--//.single tab-->
 	                            </div>

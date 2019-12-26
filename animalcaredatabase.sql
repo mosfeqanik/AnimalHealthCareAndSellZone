@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2019 at 01:20 AM
+-- Generation Time: Dec 26, 2019 at 08:59 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
-CREATE Database: animalcaredatabase;
+CREATE DATABASE  `animalcaredatabase`;
 --
 
 -- --------------------------------------------------------
@@ -29,9 +29,10 @@ CREATE Database: animalcaredatabase;
 --
 
 CREATE TABLE `comments` (
-  `comments_id` int(11) NOT NULL,
+  `comments_id` int(20) NOT NULL,
   `post_id` int(11) NOT NULL,
-  `comment` text NOT NULL
+  `comment` text NOT NULL,
+  `date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -46,7 +47,8 @@ CREATE TABLE `posts` (
   `pname` varchar(20) NOT NULL,
   `Symptoms` text NOT NULL,
   `animal` varchar(20) NOT NULL,
-  `description` text NOT NULL
+  `description` text NOT NULL,
+  `color` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -99,13 +101,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comments_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `comments_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `post_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `users`
